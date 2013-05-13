@@ -3,6 +3,44 @@ Something like notes.
 Just conform for me.
 ---------------------
 
+### 获取字符串长度
+
+>	
+	$var=1234567890
+	$length=${#var}
+>
+
+### 判断当前shell
+
+>
+	$echo $SHELL
+	or
+	$echo $0
+>
+
+### 检查是否为超级用户
+
+>
+	if [ $UID -ne 0]; then
+	   echo root user.
+	else
+	   echo no-root user.
+	fi
+>or
+>
+	if [ "`id -u`" -eq 0]; then
+		echo root
+	else
+	    echo no-root
+	fi
+>or
+>
+	if [ "whoami" == "root" ]; then
+		echo root
+	else 
+		echo no-root
+	fi
+>
 ### PS1设置问题
 
 >LINUX查询环境由：/etc/profile,$HOME/.bash_profile,/etc/basrc,$HOME/.bashrc
