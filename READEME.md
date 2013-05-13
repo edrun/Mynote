@@ -22,7 +22,7 @@ Just conform for me.
 >   这里两处可疑：
 >
 - [进入root之后并没有执行/etc/profile,而其余/root/.profile,/etc/.basrc
->      都是根据此档来设定的。
+      都是根据此档来设定的。
 -[$转义字符并不能如PC一样工作，可能得手动添加，而这又在哪里呢？
 
 ###　unix2dos CLFS error
