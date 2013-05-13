@@ -3,6 +3,14 @@ Something like notes.
 Just conform for me.
 ---------------------
 
+### 进制转换
+
+>小数点设定，echo "scale=2;3/8"|bc
+>二进制转换，echo "obase=2;100"|bc
+>平方根： echo "sqrt(100)"|bc
+>平方： echo "10^10"|bc
+
+
 ### 获取字符串长度
 
 >	
