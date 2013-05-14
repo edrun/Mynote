@@ -3,6 +3,26 @@ Something like notes.
 Just conform for me.
 ---------------------
 
+
+### 打印命令输出状态
+
+>
+	$echo $? 
+>
+>命令成功运行后会输出0，不成功会输出非0
+>
+	$ls + >stout 
+	$ls + 2> stout
+	$ls + 2>error 1>correct
+	$ls > all 2>&1
+	$ls + &> output
+
+	$find . -name "" 2> /dev/null #back hole
+> 重定向，保留副本作为stdin
+>	
+	$cat *aa|tee out.txt|cat -n #将输出写入out.txt，而out.txt作为cat 的输入
+	teee会直接覆盖掉原来内容，需要tee -a追加动作。
+
 ### 进制转换
 
 >小数点设定，echo "scale=2;3/8"|bc
