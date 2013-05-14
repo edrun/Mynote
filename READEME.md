@@ -21,8 +21,9 @@ Just conform for me.
 > 重定向，保留副本作为stdin
 >	
 	$cat *aa|tee out.txt|cat -n #将输出写入out.txt，而out.txt作为cat 的输入
-	teee会直接覆盖掉原来内容，需要tee -a追加动作。
-
+teee会直接覆盖掉原来内容，需要tee -a追加动作。
+>列出文本文件slayers.story的内容，同时复制3份副本，文件名称分别为ss-copy1、ss-copy2、ss-copy3：
+　　$ cat slayers.story |tee ss-copy1 ss-copy2 ss-copy3
 ### 进制转换
 
 >小数点设定，echo "scale=2;3/8"|bc
