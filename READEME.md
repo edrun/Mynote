@@ -3,6 +3,10 @@ Something like notes.
 Just conform for me.
 ---------------------
 
+### 别名技巧
+	alias rm='cp $@ ~/backup;rm $@' ;删除源文件之前先对其备份
+	\command 忽略别名，这对不信任的机器上是很有帮助的
+
 ### 合并分支
 
 背景:
