@@ -2,6 +2,17 @@ Something like notes.
 =====================
 Just conform for me.
 ---------------------
+###git 恢复单个文件
+
+git checkout -- 文件名称
+
+
+
+
+### 终端信息处理
+	$tput cols 获取列数
+	$tput lines 获取行数
+
 
 ### 别名技巧
 	alias rm='cp $@ ~/backup;rm $@' ;删除源文件之前先对其备份
