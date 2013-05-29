@@ -2,6 +2,34 @@ Something like notes.
 =====================
 Just conform for me.
 ---------------------
+
+sort & uniq
+
+1.uniq -c 重复输出一次，并显次数
+2.uniq -d 重复输出一次
+3.uniq -u 只输入file中唯一的行
+4.uniq f1 f2 删掉重复行，并cp到f2
+
+
+q 命令除重 必须用sort命令进行递增或递减排序后才能用。
+sort  file 
+uniq  file
+或直接使用
+
+...sort -u file  这条命令包括排序及除重...
+
+
+
+
+
+find用法
+
+find . -name "\(-name hello -o -name pyhon\)" -print
+find . -path "*sysy" -print
+find . -regex ".*\(\.py\|\.sh\)$" -print
+find . ! -name  //忽略某文件名
+find . -maxdepth 1 -type f -print //当前目录
+
 ###git 恢复单个文件
 
 git checkout -- 文件名称
@@ -59,7 +87,7 @@ $ git push  # 完成
 PS: 感谢姜同学
 
 ### 打印命令输出状态
-
+i
 >
 	$echo $? 
 >
