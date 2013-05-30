@@ -8,6 +8,17 @@ Just conform for me.
 tempfile="/var/var.$$" 
 $$为当前进程名，可以用$RANDOM随机数来表示
 
+###split
+
+dd if=/dev/zero bs=100k count=1 of=data.file
+
+split -b 10k data.file -d -a 4 split_name
+
+-b kb
+-m M
+-g G
+默认是x开头的，加-d -a 定义分割的文件名
+
 
 ###sort 小综合
 
