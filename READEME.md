@@ -3,11 +3,36 @@ Something like notes.
 Just conform for me.
 ---------------------
 
-sort & uniq
+### 需要注意的亮点
+
+tempfile="/var/var.$$" 
+$$为当前进程名，可以用$RANDOM随机数来表示
+
+
+###sort 小综合
+
+echo ssadfafggfahhhhadfdgfg|sed 's/[^\n]/&\n/g'|sort|uniq -c|sed '/^$/d'|tr -d ' \n'
+
+1.s/[^\n]/&\n/g  将字母首用断行代替
+s/./&\n/g等价，..表示两个字符，...三个字符，以此类推
+
+2.sort|uniq -c 可以用sort -u 
+
+sed '/^$/d'换空白
+tr -d ' \n' 改掉换行符和空白
+
+
+
+
+
+
+
+
+###sort & uniq
 
 1.uniq -c 重复输出一次，并显次数
-2.uniq -d 重复输出一次
-3.uniq -u 只输入file中唯一的行
+2.uniq -d 输出重复项目，只输出一次
+3.uniq -u 只输入file中唯一的行，不显示重复行
 4.uniq f1 f2 删掉重复行，并cp到f2
 
 
@@ -16,7 +41,12 @@ sort  file
 uniq  file
 或直接使用
 
-...sort -u file  这条命令包括排序及除重...
+sort -u file  这条命令包括排序及除重...
+
+sort -nrk 1 file.txt
+n数据排序，r反序，k 1 第一栏，k表栏
+
+
 
 
 
