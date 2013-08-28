@@ -7,10 +7,12 @@ Just conform for me.
 ###rsync 同步用法
 场景1：同步b目录，源目录为a
 要求b中没有a的就同步a，同样a中没有b的就删除b的
-应用：rsync -a --delete a/ b/ 
+>应用：
+>rsync -a --delete a/ b/ 
 
 场景2：在上步基础上不同.o文件，但同步.txt文件
-应用：rsync -a --include "*.txt" --exclude "*.o" --delete a/ b/
+>应用：
+>rsync -a --include "*.txt" --exclude "*.o" --delete a/ b/
 
 
 
