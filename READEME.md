@@ -168,8 +168,10 @@ fork 了一个感兴趣的项目,例如 memcached,它的开发者很活跃,很�
 $ git remote -v
 	origin  git@github.com:hy0kl/memcached.git (fetch)
 	origin  git@github.com:hy0kl/memcached.git (push)
+
 	可以看到当前的git库中,有一个默认的远程数据仓库,后面的(fetch)和(push)是 pull 抓取数据和 push 推送数据的地址.
 	我们要合并的是:
+>
 	git://github.com/memcached/memcached.git
 
 
