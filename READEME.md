@@ -156,14 +156,16 @@ git checkout -- 文件名称
 ### 合并分支
 
 背景:
->fork 了一个感兴趣的项目,例如 memcached,它的开发者很活跃,很快会遇到将主项目合并到 fork 出的分支中来的实际问题,远程分支合并.
+
+>
+fork 了一个感兴趣的项目,例如 memcached,它的开发者很活跃,很快会遇到将主项目合并到 fork 出的分支中来的实际问题,远程分支合并.
 
 具体步骤:
 
 1. 显示数据仓库
 
- >
-	$ git remote -v
+>
+$ git remote -v
 	origin  git@github.com:hy0kl/memcached.git (fetch)
 	origin  git@github.com:hy0kl/memcached.git (push)
 	可以看到当前的git库中,有一个默认的远程数据仓库,后面的(fetch)和(push)是 pull 抓取数据和 push 推送数据的地址.
