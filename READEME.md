@@ -4,6 +4,59 @@ Just conform for me.
 ---------------------
 
 
+### syetemctl用法
+
+<table>
+   <tr>
+      <td>对比表，以 apache / httpd 为例</td>
+   </tr>
+   <tr>
+      <td>任务</td>
+      <td>旧指令</td>
+      <td>新指令</td>
+   </tr>
+   <tr>
+      <td>使某服务自动启动</td>
+      <td>chkconfig --level 3 httpd on</td>
+      <td>systemctl enable httpd.service</td>
+   </tr>
+   <tr>
+      <td>使某服务不自动启动</td>
+      <td>chkconfig --level 3 httpd off</td>
+      <td>systemctl disable httpd.service</td>
+   </tr>
+   <tr>
+      <td>检查服务状态</td>
+      <td>service httpd status</td>
+      <td>systemctl status httpd.service （服务详细信息） systemctl is-active httpd.service （仅显示是否 Active)</td>
+   </tr>
+   <tr>
+      <td>显示所有已启动的服务</td>
+      <td>chkconfig --list</td>
+      <td>systemctl list-units --type=service</td>
+   </tr>
+   <tr>
+      <td>启动某服务</td>
+      <td>service httpd start</td>
+      <td>systemctl start httpd.service</td>
+   </tr>
+   <tr>
+      <td>停止某服务</td>
+      <td>service httpd stop</td>
+      <td>systemctl stop httpd.service</td>
+   </tr>
+   <tr>
+      <td>重启某服务</td>
+      <td>service httpd restart</td>
+      <td>systemctl restart httpd.service</td>
+   </tr>
+   <tr>
+      <td></td>
+   </tr>
+</table>
+
+
+
 ###rsync 同步用法
 场景1：同步b目录，源目录为a
 要求b中没有a的就同步a，同样a中没有b的就删除b的
