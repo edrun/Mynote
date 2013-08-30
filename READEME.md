@@ -1,6 +1,7 @@
-Something like notes.
+This page is about my note.
 =====================
-Just conform for me.
+Some keys from learning and working.
+Plz,just feel free for it
 ---------------------
 
 ###再次记录git-ssh配置
