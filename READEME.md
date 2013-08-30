@@ -3,6 +3,25 @@ Something like notes.
 Just conform for me.
 ---------------------
 
+###再次记录git-ssh配置
+####1.产生密钥
+>ssh-keygen -t rsa -C "you@email.com"
+
+####2.添加公钥
+>ssh-add id_rsa
+如果错误
+>ssh-agent bash
+
+####3.复制到git-ssh管理处
+>clip < ~/.ssh/id_rsa.pub
+
+####4.测试与验证
+>
+	ssh -T git@github.com
+	git config --global user.email "you@email.com"
+	git config --global user.name "you"
+####5.enjoy!
+
 
 ### syetemctl用法
 
