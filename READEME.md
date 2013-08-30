@@ -20,6 +20,7 @@ Plz, feel free for it
 	ssh -T git@github.com
 	git config --global user.email "you@email.com"
 	git config --global user.name "you"
+
 ####5.enjoy!
 
 
