@@ -1,8 +1,7 @@
-This page is about my note.
+Some keys from learning.
 =====================
-Some keys from learning and working.
-Plz,just feel free for it
----------------------
+Plz, feel free for it
+
 
 ###再次记录git-ssh配置
 ####1.产生密钥
