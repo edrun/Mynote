@@ -3,6 +3,40 @@ Some keys from learning.
 Plz, feel free for it
 
 
+
+###Linux的install命令
+
+####【概述】
+
+#####Install和cp类似，都可以将文件/目录拷贝到指定的地点。但是，install允许你控制目标文件的属性。install通常用于程序的makefile，使用它来将程序拷贝到目标（安装）目录。
+
+####【语法】
+>
+
+	install [OPTION]... [-T] SOURCE DEST
+
+	install [OPTION]... SOURCE... DIRECTORY
+
+	install [OPTION]... -t DIRECTORY SOURCE...
+
+	install [OPTION]... -d DIRECTORY...
+
+#####*如果指定了两个文件名, `install' 将第一个文件拷贝到第二个
+
+#####*如果使用了 `--target-directory' (`-t') 选项，或者如果最后一个文件是一个目录并且没有使用`--no-target-directory' (`-T')选项， `install'将每一个源文件拷贝到指定的目录，目标文件名与SOURCE文件名相同。
+
+#####* 如果使用了 `--directory' (`-d') 选项, `install' 将逐级创建缺失的目标目录
+
+####【常用选项】
+>
+	-s:对待拷贝的可执行文件进行strip操作，取出文件中的符号表。（一般在做成nand rom时去除符号表，NFS时为了调试方便，一般不会使用此选项）
+
+	-d(--directory)：创建制定的目录结构（逐级创建）。如，指定安装位置为/usr/local/aaa/bbb，/usr/loacal已存在，install会帮助我们创建aaa和bbb目录，并把程序安装到指定位置。
+
+
+
+
+
 ###再次记录git-ssh配置
 ####1.产生密钥
 >ssh-keygen -t rsa -C "you@email.com"
