@@ -1,15 +1,4 @@
 #!/bin/bash
-#####################################
-#####work.sh tools###################
-###     what is this?         #######
-#This script is wirrten for complie 
-#apps of gvos3.26/3.27/4.0 ,it fits 
-#for all of the OS version.
-#and it can change in some way.
-#hope it can help you improve the
-#work quality!Now begin!
-#####################################
-
 
 ROOT_DIR=/home/wwt/apps
 PKG_DIR=gpkg/
@@ -27,9 +16,11 @@ DB_F=DB_F_Free_001
 echo "Plz input appid:"
 read app_id
 
-PNG_ORI=$app_id/*.png
+
+PNG_ORI=$app_id/\*.png
 PNG_DEST=$app_id/$app_id.png
 XML=$app_id\*.xml
+VOD=vod\*
 #some useful functions
 
 ##chceck the error
@@ -51,7 +42,7 @@ make_p(){
 
 ##copy vod* file to app_id dir
 cp_file(){
-    cp -f vod* $app_id/vod$app_id
+    cp -f $VOD $app_id/vod$app_id
 }
 
 ##use gpkg to make the app img
@@ -86,7 +77,7 @@ exec_script(){
 cat << ENTER
 
     Usage: $0 make_p|pkg
-    -make_p       complie the soure , src
+    -map       complie the soure , src
     -pkg             gpkg package the packages
 	 
 ENTER
@@ -95,14 +86,17 @@ ENTER
 read args
 
 case "$args" in
-make_p)  cd $ROOT_DIR/$SUB_DIR
-         ccheck make_p
+map)  if [ ! -d $ROOT_DIR/$SUB_DIR/$PKG_DIR$app_id ]; then
+          mkdir $ROOT_DIR/$SUB_DIR/$PKG_DIR$app_id
+      fi
+      cd $ROOT_DIR/$SUB_DIR
+      ccheck make_p         
 ;;
 pkg)  cd  $ROOT_DIR/$SUB_DIR/$PKG_DIR
 
-      if [ -d $app_id ];then
+      if [ -d $app_id ]; then
       echo "dir exits,copy vod file !"
-      ccheck cp_file
+      cp_file
       else
       echo "there is no that dir,please make one:"
       mkdir -v $app_id
