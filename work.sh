@@ -14,6 +14,8 @@ DB_F=DB_F_Free_001
 
 #input app_id which will be complie
 echo "Plz input appid:"
+echo "--------------------------------"
+echo ">> 请输入应用ID："
 read app_id
 
 
@@ -42,7 +44,12 @@ make_p(){
 
 ##copy vod* file to app_id dir
 cp_file(){
+
+    if [ -f $app_id/vod$app_id ]; then
+       rm -f $app_id/vod$app_id
+    fi
     cp -f $VOD $app_id/vod$app_id
+
 }
 
 ##use gpkg to make the app img
@@ -74,12 +81,16 @@ pkg_file(){
 ##scipt to make the image
 exec_script(){
 
+while [ "$args" != "q" ]
+do
 cat << ENTER
-
-    Usage: $0 make_p|pkg
-    -map       complie the soure , src
-    -pkg             gpkg package the packages
-	 
+---------------------------------------
+--    Usage: $0 map|pkg       --
+--    -map   complie the soure ,src  --
+--    -pkg    package the packages   -- 
+--    -q     exit                    --
+---------------------------------------
+>> 请选择参数：	 
 ENTER
 
 
@@ -91,6 +102,9 @@ map)  if [ ! -d $ROOT_DIR/$SUB_DIR/$PKG_DIR$app_id ]; then
       fi
       cd $ROOT_DIR/$SUB_DIR
       ccheck make_p         
+      echo "成功生成vod文件！！"
+      continue
+      
 ;;
 pkg)  cd  $ROOT_DIR/$SUB_DIR/$PKG_DIR
 
@@ -102,28 +116,42 @@ pkg)  cd  $ROOT_DIR/$SUB_DIR/$PKG_DIR
       mkdir -v $app_id
       ccheck cp_file
       fi
-      pkg_file 
+      pkg_file
+      echo 
+      echo "！！！！成功生成app！！！！"
+      echo
+      echo
+      echo "*****************************************************"
+      echo 
+      ls -ahl *.pkg
+      echo 
+      echo "*****************************************************"
+      continue 
+;;
+q)  exit 0
 ;;
 esac
 
+done
 }
 
 
 echo "Plz choice which moc you want to compile:"
 cat << ENTER
-     
-    1) DB_A 
-
-    2) DB_B
-
-    3) DB_C
-
-    4) DB_D
-
-    5) DB_E
-
-    6) DB_F
-
+--------------------------------------------- 
+---    1) DB_A                          -----
+---                                       -
+---    2) DB_B                            -
+---                                       -
+---    3) DB_C                            - 
+---                                       - 
+---    4) DB_D                            - 
+---                                       -
+---    5) DB_E                            -
+---                                       - 
+---    6) DB_F                            -
+---------------------------------------------
+>>  请选择要编译的模版:
 ENTER
 
 ##input the choice:1 2 3 4 5 6 
