@@ -158,7 +158,8 @@ pkg)  cd  $ROOT_DIR/$SUB_DIR/$PKG_DIR
       echo
       echo "*****************************************************"
       echo 
-      ls -ahl *.pkg
+      find ./ -name "*.pkg"  -atime -1 -exec ls -ahl {} \;
+      #ls -ahl *.pkg
       echo 
       echo "*****************************************************"
       continue 
