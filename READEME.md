@@ -15,7 +15,10 @@ Plz, feel free for it
 
 	1 行首：home或者0或者^
 	2 行尾：end 或者$
-
+        3 搜索选中"#,*"
+        4 单词移动"b/B"
+        5 "(,)"句子，"｛，｝"段落
+        6  
 
 ###Linux的install命令
 
