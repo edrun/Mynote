@@ -1,5 +1,21 @@
 #!/bin/bash
+##################################################
+#                 gpack V0.1 beta
+#
+#                 what's this? 
+#
+#This is the first tool to package the app 
+#it aims at lazy work but effectively.
+#Followings are its functions:
+#
+#1. Can choose all version in GVTV but andriod
+#2. Include 6 model of the app
+#3. make & pkg $ q choice
+#
+#more choices will be continued
+###################################################
 
+#variety for all
 ROOT_DIR=/home/wwt/apps
 PKG_DIR=gpkg/
 DB_A=DB_A_Free_001
@@ -10,6 +26,26 @@ DB_E=DB_E_Free_001
 DB_F=DB_F_Free_001
 
 
+##gpkg depends on the os version
+cat << ENTER
+-----------------------------------------------
+Choose version:
+     1  ------ gvos3.26 版本3.26
+     2  ------ gvos4.0  版本4.08
+-----------------------------------------------
+ENTER
+echo "We must work in right OS .Choose 1 | 2 to continue:"
+echo "###############################"
+echo ">>>>                           "
+read version     
+ver_pkg(){
+    case "$version" in
+    1)   gpkg_3.20  -D $XML -S ./$app_id
+    ;;
+    2)   gpkg-364   -D $XML -S ./$app_id
+    ;;
+    esac   
+}
 
 
 #input app_id which will be complie
@@ -18,7 +54,7 @@ echo "--------------------------------"
 echo ">> 请输入应用ID："
 read app_id
 
-
+#icons variey
 PNG_ORI=$app_id/\*.png
 PNG_DEST=$app_id/$app_id.png
 XML=$app_id\*.xml
@@ -60,14 +96,14 @@ pkg_file(){
     fi
     
     if [ -f $XML ]; then
-       gpkg-364 -D $XML -S ./$app_id
+       ccheck  ver_pkg
     else
        echo "there is no xml file exists ,please check the file again!"
        echo "pleas  continue or stop by choosing y|Y|N|n:"
        read a
        
        case "$a" in 
-              y|Y)  gpkg-364 -D $XML -S ./$app_id
+              y|Y)  ccheck  ver_pkg
               ;;
               n|N)
               exit 1
@@ -92,7 +128,6 @@ cat << ENTER
 ---------------------------------------
 >> 请选择参数：	 
 ENTER
-
 
 read args
 
@@ -139,17 +174,17 @@ done
 echo "Plz choice which moc you want to compile:"
 cat << ENTER
 --------------------------------------------- 
----    1) DB_A          ----   -     -      -
----                     -       -   -       - 
----    2) DB_B          -   -    - -        -  
----                     -----     -         -   
----    3) DB_C                              -
----                     -----  -       -    -     
----    4) DB_D            -     -     -     -  
----                       -      -   -      - 
----    5) DB_E            -       - -       - 
----                       -        -        -
----    6) DB_F                              -
+---    1) DB_A                          -----
+---                                       -
+---    2) DB_B                            -
+---                                       -
+---    3) DB_C                            - 
+---                                       - 
+---    4) DB_D                            - 
+---                                       -
+---    5) DB_E                            -
+---                                       - 
+---    6) DB_F                            -
 ---------------------------------------------
 >>  请选择要编译的模版:
 ENTER
