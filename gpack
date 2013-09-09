@@ -11,16 +11,20 @@ DB_F=DB_F_Free_001
 DB_B_F=DB_B_Free_001_FenLan
 
 cat << ENTER
+
+
 -----------------------------------------------
 Choose version:
      1  ------gvos3.26
      2  ------gvos4.0
 -----------------------------------------------
+
+
 ENTER
 
 echo "please select <a <b to choose:"
 echo "###############################"
-echo ">> "
+echo ">>请选择系统版本号： "
 read version
 ver_pkg(){
     case "$version" in
@@ -28,6 +32,7 @@ ver_pkg(){
     ;;
     2)   gpkg-364   -D $XML -S ./$app_id
     ;;
+   esac
 }
 
 
@@ -142,7 +147,7 @@ pkg)  cd  $ROOT_DIR/$SUB_DIR/$PKG_DIR
       echo
       echo "*****************************************************"
       echo
-      ls -ahl *.pkg
+      find ./ -name "*.pkg" -type f -atime -1 -exec ls -ahl {} \;
       echo
       echo "*****************************************************"
       continue
@@ -202,7 +207,6 @@ case "$choice" in
        exec_script
        pkg_file
     ;;
-esac
 esac
 
 
