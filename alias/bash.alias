@@ -1,0 +1,5 @@
+alias gadd='git -Av'
+alias gmit='git commit -m "update"'
+alias gpush='git push origin master'
+alias gpull='git pull -v'
+alias gpage='git push origin gh-pages'
