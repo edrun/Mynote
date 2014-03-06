@@ -1,0 +1,21 @@
+if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
+        set fileencodings=ucs-bom,utf-8,gbk,latin1
+endif
+
+"F2自动隐藏行号
+set number
+nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+
+"F3自动注释
+
+set runtimepath+=~/.vim_runtime
+
+source ~/.vim_runtime/vimrcs/basic.vim
+source ~/.vim_runtime/vimrcs/filetypes.vim
+source ~/.vim_runtime/vimrcs/plugins_config.vim
+source ~/.vim_runtime/vimrcs/extended.vim
+
+try
+source ~/.vim_runtime/my_configs.vim
+catch
+endtry
