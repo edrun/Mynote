@@ -1,4 +1,6 @@
-alias gadd='git -Av'
+
+#gut command
+alias gadd='git add -Av'
 alias gmit='git commit -m "update"'
 alias gpush='git push origin master'
 alias gpull='git pull -v'
